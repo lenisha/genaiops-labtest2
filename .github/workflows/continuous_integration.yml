@@ -151,6 +151,8 @@ jobs:
           echo "Run AI-Based flow evaluation"
           echo "AZURE_RESOURCE_GROUP=${AZURE_RESOURCE_GROUP}"
           echo "AZURE_OPENAI_NAME=${AZURE_OPENAI_NAME}"
+          export AZURE_RESOURCE_GROUP="rg-rag-project-dev"
+          export AZURE_OPENAI_NAME="aoai-2veicpmifv5tw"
           export AZURE_OPENAI_API_KEY=$(az cognitiveservices account keys list --resource-group ${AZURE_RESOURCE_GROUP} --name ${AZURE_OPENAI_NAME} --query "key1" --output tsv)
           python evaluations/qa_quality_eval.py
         shell: bash
