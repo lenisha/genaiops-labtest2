@@ -12,9 +12,10 @@ from azure_config import AzureConfig
 
 # Initialize AzureConfig
 azure_config = AzureConfig()
-
+AZURE_OPENAI_CHAT_DEPLOYMENT="gpt-35-turbo"
+AZURE_OPENAI_EMBEDDING_MODEL="text-embedding-ada-002"
 def get_embedding(question: str):
-    embedding_model = os.environ["AZURE_OPENAI_EMBEDDING_MODEL"]
+    embedding_model = AZURE_OPENAI_EMBEDDING_MODEL
 
     connection = AzureOpenAIConnection(
         azure_deployment=embedding_model,
@@ -44,7 +45,7 @@ def get_response(question, chat_history):
     print("context:", context)
     print("getting result...")
 
-    deployment_name = os.environ["AZURE_OPENAI_CHAT_DEPLOYMENT"]
+    deployment_name =AZURE_OPENAI_CHAT_DEPLOYMENT
 
     configuration = AzureOpenAIModelConfiguration(
         azure_deployment=deployment_name,
