@@ -239,7 +239,7 @@ module openaiRoleBackend 'core/security/role.bicep' = {
   params: {
     principalId: appService.outputs.identityPrincipalId
     roleDefinitionId: '5e0bd9bd-7b93-4f28-af87-19fc36ad61bd' //Cognitive Services OpenAI User
-    principalType: principalType
+    principalType: 'ServicePrincipal'
   }
 }
 
@@ -249,7 +249,7 @@ module aiSearchServiceContributor 'core/security/role.bicep' = {
   params: {
     principalId: appService.outputs.identityPrincipalId
     roleDefinitionId: '7ca78c08-252a-4471-8644-bb5ff32d4ba0' //Search Service Contributor
-    principalType: principalType
+    principalType: 'ServicePrincipal'
   }
 }
 
@@ -259,7 +259,7 @@ module aiSearchRole 'core/security/role.bicep' =  {
   params: {
     principalId: appService.outputs.identityPrincipalId
     roleDefinitionId: '8ebe5a00-799e-43f5-93ac-243d3dce84a7' //Search Index Data Contributor
-    principalType: principalType
+    principalType: 'ServicePrincipal'
   }
 }
 
@@ -269,7 +269,7 @@ module appserviceAcrRolePull 'core/security/role.bicep' = {
   params: {
     principalId: appService.outputs.identityPrincipalId
     roleDefinitionId: '7f951dda-4ed3-4680-a7ca-43fe172d538d'
-    principalType: principalType
+    principalType: 'ServicePrincipal'
   }
 }
 
