@@ -183,6 +183,7 @@ runs:
               fi
               # Export the variable to the current environment
               export $VAR=$VALUE
+              echo "$VAR=$VALUE" >> "$GITHUB_OUTPUT"
               echo "$VAR: $VALUE (from $SOURCE)"
           done
 
@@ -216,6 +217,7 @@ runs:
 
             # Export the variable to the current environment
             export $VAR=$VALUE
+            echo "$VAR=$VALUE" >> "$GITHUB_OUTPUT"
             echo "$VAR: $VALUE (from $SOURCE)"
         done
 
