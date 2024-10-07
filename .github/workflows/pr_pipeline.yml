@@ -131,6 +131,8 @@ jobs:
           AZURE_OPENAI_API_VERSION: ${{needs.config-env-job.outputs.AZURE_OPENAI_API_VERSION}}    
         run: |
           echo "Run AI-Based prompt evaluation"
+          export AZURE_RESOURCE_GROUP="rg-rag-project-dev02"
+          export AZURE_OPENAI_NAME="aoai-2veicpmifv5tw"             
           export AZURE_OPENAI_API_KEY=$(az cognitiveservices account keys list --resource-group ${AZURE_RESOURCE_GROUP} --name ${AZURE_OPENAI_NAME} --query "key1" --output tsv)
           python evaluations/prompty_eval.py
         shell: bash
