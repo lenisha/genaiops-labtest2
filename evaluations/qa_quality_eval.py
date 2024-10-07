@@ -16,7 +16,10 @@ def main():
 
     # Set required environment variables
     os.environ['AZURE_OPENAI_ENDPOINT'] = azure_config.aoai_endpoint
-    os.environ['AZURE_OPENAI_API_KEY'] = azure_config.aoai_api_key    
+    os.environ['AZURE_OPENAI_API_KEY'] = azure_config.aoai_api_key  
+    os.environ['AZURE_RESOURCE_GROUP'] =  azure_config.resource_group
+    os.environ['AZURE_OPENAI_NAME'] = azure_config.aoai_account_name
+    
 
     ##################################
     ## Base Run
