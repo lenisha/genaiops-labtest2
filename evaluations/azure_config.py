@@ -13,7 +13,7 @@ class AzureConfig:
         self.aoai_api_version = "2024-05-01-preview"
         self.search_endpoint = "https://srch-2veicpmifv5tw.search.windows.net/"
         self.aoai_api_key = "use_managed_identity"
-        self.aoai_api_key = os.environ["AZURE_OPENAI_API_KEY"]
+        # self.aoai_api_key = os.environ["AZURE_OPENAI_API_KEY"]
         self.aoai_account_name = self.get_domain_prefix(self.aoai_endpoint)
         self.search_account_name = self.get_domain_prefix(self.search_endpoint)
 
