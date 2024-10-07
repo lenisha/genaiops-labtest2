@@ -19,7 +19,7 @@ def main():
     os.environ['AZURE_OPENAI_API_KEY'] = azure_config.aoai_api_key  
     os.environ['AZURE_RESOURCE_GROUP'] =  azure_config.resource_group
     os.environ['AZURE_OPENAI_NAME'] = azure_config.aoai_account_name
-    
+
 
     ##################################
     ## Base Run
@@ -60,7 +60,7 @@ def main():
     model_config = AzureOpenAIModelConfiguration(
         azure_endpoint=azure_config.aoai_endpoint,
         api_key=azure_config.aoai_api_key,
-        azure_deployment=os.environ.get("AZURE_OPENAI_CHAT_DEPLOYMENT"),
+        azure_deployment="gpt-35-turbo",
         api_version=azure_config.aoai_api_version,
     )
     
