@@ -152,8 +152,8 @@ jobs:
           PREFIX: ${{ github.sha }} 
         run: |
           echo "Run AI-Based flow evaluation"
-          export AZURE_RESOURCE_GROUP="rg-rag-project-dev02"
-          export AZURE_OPENAI_NAME="aoai-2veicpmifv5tw"          
+          export AZURE_RESOURCE_GROUP="rg-genaiops-dev"
+          export AZURE_OPENAI_NAME="aoai-ctjtswrjbngue"          
           echo "AZURE_RESOURCE_GROUP=${AZURE_RESOURCE_GROUP}"
           echo "AZURE_OPENAI_NAME=${AZURE_OPENAI_NAME}"
 

@@ -4,14 +4,13 @@ import re
 class AzureConfig:
     def __init__(self):
         # Load environment variables for Azure configuration
-        self.subscription_id = "f06766f1-b4ae-4723-afb7-281e9a742656"
-        # os.environ["AZURE_SUBSCRIPTION_ID"]
-        self.resource_group = "rg-rag-project-dev02"
-        self.workspace_name = "ai-project-2veicpmifv5tw"
-        self.location = "eastus2"
-        self.aoai_endpoint = "https://aoai-2veicpmifv5tw.openai.azure.com/"
-        self.aoai_api_version = "2024-05-01-preview"
-        self.search_endpoint = "https://srch-2veicpmifv5tw.search.windows.net/"
+        self.subscription_id = os.environ["AZURE_SUBSCRIPTION_ID"]
+        self.resource_group = os.environ["AZURE_RESOURCE_GROUP"]
+        self.workspace_name = os.environ["AZUREAI_PROJECT_NAME"]
+        self.location = os.getenv("AZURE_LOCATION", "")
+        self.aoai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT", "")
+        self.aoai_api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-05-01-preview")
+        self.search_endpoint = os.getenv("AZURE_SEARCH_ENDPOINT", "")
         self.aoai_api_key = "use_managed_identity"
         # self.aoai_api_key = os.environ["AZURE_OPENAI_API_KEY"]
         self.aoai_account_name = self.get_domain_prefix(self.aoai_endpoint)

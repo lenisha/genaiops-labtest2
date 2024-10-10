@@ -129,10 +129,11 @@ jobs:
           AZURE_OPENAI_CHAT_DEPLOYMENT: ${{needs.config-env-job.outputs.AZURE_OPENAI_CHAT_DEPLOYMENT}}
           AZURE_OPENAI_EMBEDDING_MODEL: ${{needs.config-env-job.outputs.AZURE_OPENAI_EMBEDDING_MODEL}}
           AZURE_OPENAI_API_VERSION: ${{needs.config-env-job.outputs.AZURE_OPENAI_API_VERSION}}    
+          AZURE_SUBSCRIPTION_ID: ${{ needs.config-env-job.outputs.AZURE_SUBSCRIPTION_ID }}
         run: |
           echo "Run AI-Based prompt evaluation"
-          export AZURE_RESOURCE_GROUP="rg-rag-project-dev02"
-          export AZURE_OPENAI_NAME="aoai-2veicpmifv5tw"             
+          export AZURE_RESOURCE_GROUP="rg-genaiops-dev"
+          export AZURE_OPENAI_NAME="aoai-ctjtswrjbngue"             
           export AZURE_OPENAI_API_KEY=$(az cognitiveservices account keys list --resource-group ${AZURE_RESOURCE_GROUP} --name ${AZURE_OPENAI_NAME} --query "key1" --output tsv)
           python evaluations/prompty_eval.py
         shell: bash
